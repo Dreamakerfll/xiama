@@ -1,0 +1,10 @@
+
+.login_div{
+    z-index: 99;
+    position: fixed;
+    margin: 0px auto;
+    width: 300px;
+    height: 250px;
+    background-color:#2e6da4;
+    top:-300px;
+}

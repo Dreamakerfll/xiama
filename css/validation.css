@@ -1,0 +1,24 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.red{
+    background: #a30;
+}
+
+.error{
+    border:1px solid #a10;
+}
+
+.label-error{
+    color:#a30;
+}
+
+.wrapper{
+    margin:30px auto;
+    width:320px;
+}

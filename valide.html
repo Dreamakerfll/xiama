@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>验证界面</title>
+
+    <script src="lib/jquery.js"></script>
+    <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="lib/angular.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/valide.js"></script>
+    <link href="css/valide.css" rel="stylesheet" type="text/css">
+    <script src="js/valideResize.js"></script>
+
+</head>
+<body ng-app ="myApp" ng-controller="MainController">
+<div class="wrapper">
+    <div class="imgElement" id="c1"></div>
+    <div class="imgElement" id = "c2">
+        <form name="signUpForm"  ng-submit="submitForm()" class = "my-form">
+            <div class="form-group">
+                <label class="label-control1" for="mobileNo">&nbsp;</label>
+                <input id="mobileNo" name="mobileNo" ng-model="userdata.mobileNo" class="form-control input-control" type = "number"
+                       ng-class="{'error':signUpForm.mobileNo.$invalid && signUpForm.mobileNo.$touched}  " ng-minlength="11" ng-maxlength="11" required>
+                <div class="label-error col-sm-12" ng-if="signUpForm.mobileNo.$error.required && signUpForm.mobileNo.$touched">请输入手机号码</div>
+                <div class="label-error col-sm-12" ng-if="(signUpForm.mobileNo.$error.minlength||signUpForm.mobileNo.$error.maxlength) && signUpForm.mobileNo.$touched">手机号码为11位</div>
+            </div>
+            <div class="form-group">
+                <label class="label-control2" for="introducer">&nbsp;</label>
+                <span>
+                <input id="introducer" name="introducer" ng-model="userdata.introducer" class="form-control input-control-1" type = "text">
+                    <button class="btn btn-primary btn-caps" ng-disabled="signUpForm.mobileNo.$invalid">获取验证码</button>
+                    </span>
+            </div>
+            <div class="form-group submit-btn">
+                <button type="submit" ng-disabled="signUpForm.$invalid" class="btn-submit">
+            </button>
+                <div id="show_login_div" class="btn-submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+</body>
+
+</html>

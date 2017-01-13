@@ -1,0 +1,165 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+#c1{
+    z-index: 1;
+    background-image: url("../images/payStatus.jpg");
+    left: auto !important;
+}
+
+#c2{
+    z-index: 2;
+    left: auto !important;
+}
+
+.imgElement {
+    position: absolute!important;
+    background-size: 100% 100%!important;
+}
+
+@media screen and (min-width:145px){
+    .form-group {
+        margin: 15px auto;
+        text-align: center;
+        line-height: 20px;
+    }
+    .input-control{
+        display:inline !important;
+        min-width: 80px;
+        max-width: 140px;
+        border: 0px solid #4d87ca !important;
+        height:20px;
+        padding: 0px 5px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important;
+    }
+
+    label[class ^= "label-control"]{
+        text-align: right;
+        background-size: 100% auto;
+        height: 20px;
+        width: 80px;
+    }
+    button[class^="btn-"]{
+        height: 28px;
+        width: 45px;
+    }
+}
+
+@media screen and (min-width:300px){
+    .form-group {
+        margin: 15px auto;
+        text-align: center;
+        line-height: 25px;
+    }
+    .input-control{
+        display:inline !important;
+        min-width: 80px;
+        max-width: 140px;
+        border: 0px solid #4d87ca !important;
+        height:25px;
+        padding: 0px 5px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important;
+    }
+
+    label[class ^= "label-control"]{
+        text-align: right;
+        background-size: 100% auto;
+        height: 25px;
+        width: 100px;
+    }
+    button[class^="btn-"]{
+        height: 45px;
+        width: 100px;
+    }
+}
+
+@media screen and (min-width:375px){
+    .form-group {
+        margin: 15px auto;
+        text-align: center;
+        line-height: 32px;
+    }
+    .input-control{
+        display:inline !important;
+        min-width: 80px;
+        max-width: 200px;
+        border: 0px solid #4d87ca !important;
+        height:34px;
+        padding: 5px 12px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important;
+        font-family:SimHei;
+        color: #1069ad;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    label[class ^= "label-control"]{
+        text-align: right;
+        background-size: 100% auto;
+        height: 32px;
+        width: 113px;
+    }
+    button[class^="btn-"]{
+        height: 55px;
+        width: 130px;
+    }
+}
+
+
+
+.label-control1{
+    background-image: url("../images/name1.jpg");
+
+}
+
+.label-control2{
+    background-image: url("../images/identity1.jpg");
+
+}
+
+.label-control5{
+    background-image: url("../images/raceType1.jpg");
+
+}
+
+.label-control6{
+    background-image: url("../images/clothesSize1.jpg");
+
+}
+
+.label-control7{
+    background-image: url("../images/mobileNo.jpg");
+
+}
+
+.submit-btn{
+    margin-top: 30px;
+}
+
+ .btn-submit{
+    background-image: url("../images/close.png");
+    background-size: 100% 100%;
+     margin-right: 15px;
+     border: 1px solid transparent;
+}
+
+.btn-submit[disabled]{
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+input[type="file"]{
+    opacity: 1;
+}
+
+.span_position{
+    position: absolute;
+}

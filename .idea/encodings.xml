@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/js/entroll.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/payStatus.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/signup.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/validation.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/valide.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/white.js" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>白名单</title>
+
+    <script src="lib/jquery.js"></script>
+    <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="lib/angular.min.js"></script>
+    <script src="js/white.js"></script>
+    <link href="css/white.css" rel="stylesheet" type="text/css">
+    <script src="js/whiteResize.js"></script>
+
+</head>
+<body ng-app ="myApp" ng-controller="MainController">
+<div class="wrapper">
+    <div class="imgElement" id="c1"></div>
+    <div class="imgElement" id = "c2">
+        <form name="signUpForm"  ng-submit="submitForm()" class = "my-form">
+            <div class="form-group">
+                <label class="label-control1" for="mobileNo">&nbsp;</label>
+                <input id="mobileNo" name="mobileNo" ng-model="userdata.mobileNo" class="form-control input-control" type = "number"
+                       ng-class="{'error':signUpForm.mobileNo.$invalid && signUpForm.mobileNo.$touched}  " ng-minlength="11" ng-maxlength="11" required>
+                <div class="label-error control-label" ng-if="signUpForm.mobileNo.$invalid && signUpForm.mobileNo.$touched">手机号码输入有误</div>
+            </div>
+            <div class="form-group">
+                <label class="label-control2" for="introducer">&nbsp;</label>
+                <input id="introducer" name="introducer" ng-model="userdata.introducer" class="form-control input-control" type = "text">
+                <div class="label-error control-label" ng-if="signUpForm.username.$invalid && signUpForm.username.$touched">输入有误请检查</div>
+            </div>
+            <div class="form-group submit-btn">
+                <button type="submit" ng-disabled="signUpForm.$invalid" class="btn-submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

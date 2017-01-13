@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>马拉松报名界面</title>
+
+    <script src="lib/jquery.js"></script>
+    <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="lib/angular.min.js"></script>
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <script src="js/payStatus.js"></script>
+    <link href="css/payStatus.css" rel="stylesheet" type="text/css">
+    <script src="js/payStatusResize.js"></script>
+
+    <style>
+        input{readonly:expression(this.readOnly=true);}
+    </style>
+</head>
+<body ng-app ="myApp" ng-controller="MainController">
+<div class="wrapper">
+
+    <div class="imgElement" id="c1"></div>
+    <div class="imgElement" id = "c2">
+        <form name="signUpForm"  ng-submit="submitForm()" class = "my-form">
+            <div class="form-group">
+                <label class="label-control1" for="userName">&nbsp;</label>
+                        <input id="userName" name="userName" ng-model="userdata.userName" class="form-control input-control" type = "text" readonly
+                              >
+            </div>
+            <div class="form-group">
+                <label class="label-control2" for="identityId">&nbsp;</label>
+                        <input id="identityId" name="identityId" ng-model="userdata.identityId" class="form-control input-control" type = "text">
+            </div>
+            <div class="form-group">
+                <label class="label-control5" for="raceType">&nbsp;</label>
+                <input id="raceType" name="raceType" class="form-control input-control" type = "text">
+            </div>
+            <div class="form-group">
+                <label class="label-control6" for="clothesSize">&nbsp;</label>
+                <input id="clothesSize" name="clothesSize" class="form-control input-control" type = "text">
+            </div>
+            <div class="form-group">
+                <label class="label-control7" for="mobile">&nbsp;</label>
+                <input id="mobile" name="mobile" class="form-control input-control" type = "text">
+            </div>
+            <div class="form-group submit-btn">
+                <button type="submit" ng-disabled="signUpForm.$invalid" class="btn-submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>马拉松报名界面</title>
+
+
+
+    <script src="lib/jquery.js"></script>
+
+
+
+    <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="lib/angular.min.js"></script>
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+
+    <link href="css/signup.css" rel="stylesheet" type="text/css">
+    <script src="js/signupResize.js"></script>
+
+</head>
+<body ng-app ="myApp" ng-controller="MainController">
+    <div class="wrapper">
+        <div class="imgElement" id="c1"></div>
+        <div class="imgElement" id = "c2">
+            <form name="signUpForm"  ng-submit="submitForm()" class = "my-form">
+                <div class="form-group">
+                    <label class="label-control1" for="userName">&nbsp;</label>
+                    <span class="span_position">
+                        <input id="userName" name="userName" ng-model="userdata.userName" class="form-control input-control" type = "text"
+                               ng-class="{'error':signUpForm.userName.$invalid && signUpForm.userName.$touched}  " required>
+                        <p class="fa fa-check input_result result_success" ng-if="signUpForm.userName.$valid && signUpForm.userName.$touched"></p>
+                        <p class="fa fa-times input_result result_error" ng-if="signUpForm.userName.$error.required && signUpForm.userName.$touched"></p>
+                    </span>
+                    <div class="label-error control-label" ng-if="signUpForm.userName.$error.required && signUpForm.userName.$touched">请输入姓名</div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control2" for="identityId">&nbsp;</label>
+                    <span class="span_position">
+                        <input id="identityId" name="identityId" ng-model="userdata.identityId" class="form-control input-control" type = "text" required>
+                        <p class="fa fa-check input_result result_success" ng-if="signUpForm.identityId.$valid && signUpForm.identityId.$touched"></p>
+                        <p class="fa fa-times input_result result_error" ng-if="signUpForm.identityId.$error.required && signUpForm.identityId.$touched"></p>
+                    </span>
+                    <div class="label-error control-label" ng-if="signUpForm.identityId.$invalid && signUpForm.identityId.$touched">请输入身份证号</div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control3" for="identityUpload">&nbsp;</label>
+                    <span id="takephoto_cardNoImgFile" class="btn btn-primary" style = "width:50px">拍照</span>
+                     <span class="span_position">
+                        <input id="identityUpload" name="identityUpload" ng-model="userdata.identityUpload" class="form-control input-control-1" type = "file" onclick="showWait('cardNoImgFile');">
+                         <p id="cardNoImgFile_success" class="fa fa-check input_result result_success" style="display:none;"></p>
+                         <p id="cardNoImgFile_error" class="fa fa-times input_result result_error" style="display:none;"></p>
+                         <p id="cardNoImgFile_wait" class="fa fa-spinner fa-pulse fa-1x fa-fw input_result_out result_wait"  style="display:none;"></p>
+                     </span>
+                    <div class="label-error control-label" ng-if="signUpForm.identityUpload.$invalid && signUpForm.identityUpload.$touched">输入有误请检查</div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control4" for="runIdUpload">&nbsp;</label>
+                    <span id="takephoto_runIdUpload" class="btn btn-primary" style = "width:50px">拍照</span>
+                    <input id="runIdUpload" name="runIdUpload" ng-model="userdata.runIdUpload" class="form-control input-control-1" type = "file">
+                    <div class="label-error control-label" ng-if="signUpForm.runIdUpload.$invalid && signUpForm.runIdUpload.$touched">输入有误请检查</div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control5" for="raceType">&nbsp;</label>
+                    <input id = "raceType" name = "raceType" ng-model="userdata.raceType" class="form-control input-control"  type = "text"/>
+                    <p class="fa fa-check input_result result_success" ng-if="signUpForm.raceType.$valid && signUpForm.raceType.$touched"></p>
+                    <p class="fa fa-times input_result result_error" ng-if="signUpForm.raceType.$error.required && signUpForm.raceType.$touched"></p>
+                    <div class="label-error control-label" ng-if="signUpForm.raceType.$invalid && signUpForm.raceType.$touched">输入有误请检查</div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control6" for="clothesSize">&nbsp;</label>
+                    <select id = "clothesSize" name = "clothesSize" ng-model="userdata.clothesSize" class="form-control input-control">
+                        <option></option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="NY">New York</option>
+                        <option value="MD">Maryland</option>
+                        <option value="VA">Virginia</option>
+                    </select>
+                    <div class="label-error control-label" ng-if="signUpForm.clothesSize.$invalid && signUpForm.clothesSize.$touched">输入有误请检查</div>
+                </div>
+                <div class="form-group submit-btn">
+                    <button type="submit" ng-disabled="signUpForm.$invalid" class="btn-submit">
+                    </button>
+                    <button type="" ng-disabled="" class="btn-cancel">
+                    </button>
+                    <div id="init" type="" ng-disabled="" ng-click = "init();" class="btn-cancel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script>
+        window.$$=window.Zepto = Zepto;
+        $('#raceType').click();
+        $$('#raceType').bind("touchstart",function(event){
+            var touchpros =event.touches[0];
+            console.log(touchpros);
+            $('#raceType').append('<li>touchstart...</li>');
+        });
+        $$("#raceType").picker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+  <button class="button button-link pull-left"></button>\
+  <button class="button button-link pull-right close-picker">确定</button>\
+  <h1 class="title">参赛种类</h1>\
+  </header>',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['----全程----', '----半程----', '----5公里----', '----10公里----']
+                }
+            ]
+        });
+        var object = document.getElementById('raceType');
+        object.readOnly = false;
+    </script>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>
